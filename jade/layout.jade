@@ -10,12 +10,10 @@ html(lang="en")
 
 	body
 		block header
-			header.main
-				nav
-					ul
-						li: a(href="/") home
-						li: a(href="http://magicshifter") magicshifter.net
-
+			if logo
+				header.main
+					div#logo
+						img(src=logo)
 
 		block content 
 			div empty body content
