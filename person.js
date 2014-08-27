@@ -11,32 +11,48 @@ module.exports = {
 		"with cones, balls and rings since twenty",
 		"and life juggles with me since around thirty years."
 	],
-	affiliations: [
-		{
-			name: "Bitcoiners Without Borders",
-			url: "https://bwb.is",
-			logo: "bwb.png",
-			description: "We are a tribe of individuals tired of the destructive trip, workin' on a better Day.",
-			showtitle: true,
-		},
-		{
-			name: "Metalab",
-			url: "https://metalab.at",
-			logo: "metalab.png",
-			description: "The Metalab is the first Hackerspace in Vienna. I can usually be found in the Lounge.",
-			showtitle: true,
-		},
-	],
+	affiliations: { 
+		title: "Organisations",
+		items: [
+			{
+				name: "Bitcoiners Without Borders",
+				url: "http://bwb.is",
+				logo: "bwb.png",
+				description: "We are a tribe of individuals tired of the destructive trip, workin' on a better Day.",
+				showtitle: true,
+			},
+			{
+				name: "Metalab",
+				url: "https://metalab.at",
+				logo: "metalab.png",
+				description: "The Metalab is the first Hackerspace in Vienna. I can usually be found in the Lounge.",
+				showtitle: true,
+			},
+			{
+				name: "Bitcoin Foundation",
+				url: "https://bitcoinfoundation.org",
+				logo: "bitcoinfoundation.png",
+				description: "The Bitcoin Foundation is an international network promoting the use of virtual currencies worldwide.",
+				showtitle: true,
+			},
+		],
+	},
 	emails: [
 		'jascha@jaeh.at',
 		'jascha@bwb.is'
 	],
 	socialnetworks: [
 		{
-			text: "jascha",
+			text: "github",
+			logo: "social/github.png",
+			url: "https://github.org/jaeh/",
+			description: "octocat says hello."
+		},
+		{
+			text: "keybase.io",
 			logo: "social/keybase.png",
 			url: "https://keybase.io/jascha",
-			description: "my keybase profile"
+			description: "my keybase.io profile"
 		},
 		{
 			text: "@weirdpress",

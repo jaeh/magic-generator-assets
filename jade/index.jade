@@ -19,12 +19,12 @@ block content
 			if person.affiliations
 				div(itemprop="affiliations")
 					ul
-						lh Affiliations:
-						for affiliation in person.affiliations
+						lh= person.affiliations.title
+						for affiliation in person.affiliations.items
 							li(itemprop="affiliation" itemscope itemtype="http://schema.org/Organization") 
 								a(href=affiliation.url itemprop="url")
 									if affiliation.logo
-										img(src=img_dir + affiliation.logo alt=affiliation.name height="60px")
+										img(src=img_dir + affiliation.logo alt=affiliation.name)
 									else
 										span(itemprop="legalName")= affiliation.name
 
