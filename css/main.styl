@@ -1,6 +1,16 @@
 a_color = #666
 a_color_hover = #333
 
+row_1_item_1_width = 79%
+row_1_item_2_width = 20%
+
+row_2_item_1_width = 59%
+row_2_item_2_width = 40%
+
+row_3_item_1_width = 39%
+row_3_item_2_width = 60%
+
+
 body
 	font-size 23px
 	max-width 700px
@@ -27,12 +37,63 @@ header.main
 				display inline-block
 				margin 0 1em 0 0
 
-section
-	header
+div#wrapper
+	header.main
 		h2
 			font-size 1.5em
 			margin 0 0 0.5em
 
+	div#container 
+		width 100%
+		
+		div.row
+			width 100%
+			clear both
+			height 300px
+			
+			.left, .right
+				float left
+				height 300px
+				
+				&:hover 
+					.item
+						display block
+				
+				.item
+					//display none
+					header
+						width 20%
+				
+				
+					.description 
+						display none
+		
+		#row-1 
+			.left
+				background-color red
+				width row_1_item_1_width
+			.right
+				background-color blue
+				width row_1_item_2_width
+		
+		#row-2
+			.left
+				background-color orange
+				width row_2_item_1_width
+			.right
+				background-color violet
+				width row_2_item_2_width
+		
+		#row-3
+			.left
+				background-color turquois
+				width row_3_item_1_width
+			.right
+				background-color pink
+				width row_3_item_2_width
+				
+			
 
 footer.main
 	margin 1em 0
+
