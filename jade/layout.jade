@@ -1,12 +1,15 @@
 doctype html
-html(lang="en")
+html(lang="en" itemscope itemtype="http://schema.org/ProfilePage")
 	head 
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		title Jascha Ehrenreich - Webbed Magic
-		meta(name="description", content="Change the money, don't let the money change you. Working on a better day.")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href=static_dir + "css/main.css")
+
+		meta(property="og:title" content=person.firstname + " " + person.lastname  + ": " + person.slogan)
+		meta(property="og:image" content="http://jaeh.at/static/img/jascha.ehrenreich.png")
+		meta(name="description" property="og:description" content="Learn more about Jascha Ehrenreich. Webprogrammer and Streetartist.")
 
 	body
 		block header
@@ -19,13 +22,3 @@ html(lang="en")
 			div empty body content
 
 		block footer
-			footer.main 
-				div#imprint
-					| created by 
-					a(href="https://bwb.is" target="utopia") 
-						img(src=img_dir + "bwb.png" alt="BitcoinersWithoutBorders")
-					| @ 
-					a(href="http://www.metalab.at" target="metalab")
-						img(src=img_dir + "metalab.png" alt="Metalab")
-
-		script(src=static_dir + "js/script.js")

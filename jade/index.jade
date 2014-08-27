@@ -1,14 +1,61 @@
 extends layout.jade
 
 block content
-	section#about
-		header
-			h2 Jascha Ehrenreich
+	section(itemprop="author" itemscope itemtype="http://schema.org/Person")
+		header.main
+			img(itemprop="image" src=img_dir + "jascha.ehrenreich.png" alt="Jascha Ehrenreich")
+			h1(itemprop="name")= person.firstname + " " + person.lastname
+		
+			if person.jobTitle
+				div.jobTitle(itemprop="jobTitle")= person.jobTitle
+			
+			if person.description
+				div(itemprop="description") 
+					for desc in person.description
+						p= desc
 
-		nav
-			ul
-				li: a(href="https://keybase.io/jascha/") keybase
-				li: a(href="http://jaeh.at/keybase.txt") keybase.txt
-				li: a(href="https://twitter.com/weirdpress") twitter
-				li: a(href="http://suppe.jaeh.at") soup
-				li: a(href="https://facebook.com/jascha.ehrenreich/") facebook
+
+		div.extended
+			if person.affiliations
+				div(itemprop="affiliations")
+					ul
+						lh Affiliations:
+						for affiliation in person.affiliations
+							li(itemprop="affiliation" itemscope itemtype="http://schema.org/Organization") 
+								a(href=affiliation.url itemprop="url")
+									if affiliation.logo
+										img(src=img_dir + affiliation.logo alt=affiliation.name height="60px")
+									else
+										span(itemprop="legalName")= affiliation.name
+
+								if affiliation.showtitle && affiliation.logo
+									h2
+										a(href=affiliation.url itemprop="legalName")= affiliation.name
+
+								div(itemprop="description")= affiliation.description
+								
+
+			if person.emails || person.socialnetworks
+				nav#social-networks
+					if person.emails
+						ul.emails
+							lh emails: 
+
+							for email in person.emails
+								li(itemprop="contactPoint")
+									a(itemprop="email" href="mailto://" + email)= email
+
+					if person.socialnetworks
+						ul.social
+							lh(itemprop="contentType") Social Networks:
+							
+							for network in person.socialnetworks
+								li(itemprop="contactPoint")
+									a(itemprop="url" href=network.url)
+										if network.logo
+											img(src=img_dir + network.logo alt=network.text title=network.text)
+										else
+											span(itemprop="name")= network.text
+									if network.description
+										if ! network.logo
+											dd(itemprop="description")= network.description

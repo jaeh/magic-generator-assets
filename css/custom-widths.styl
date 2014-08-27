@@ -1,28 +1,38 @@
-
-
-
 @media (max-width: 800px)
 	body
-		font-size 20px
+		font-size 18px
 
 @media (max-width: 600px)
 	body
-		font-size 17px
-	header.main
-		font-size 1.5em
+		font-size 16px
 
 @media (max-width: 500px)
 	body
 		font-size 15px
-	header.main
-		font-size 1.5em
 
-@media (max-width: 400px)
+	header.main
+		div[itemprop=description]
+			max-width 100%
+			margin 1em 0
+	section[itemprop=author]
+		ul.email,
+		ul.social
+			width 100%
+
+@media (max-width: 420px)
 	body
 		font-size 17px
 	
 	header.main
-		font-size 1.5em
+		text-align center
+		img[itemprop="image"],
+		h1[itemprop=name],
+		div[itemprop="jobTitle"]
+			max-width 100%
+			width 100%
+			text-align center
+			float none
+
 		nav
 			ul
 				li

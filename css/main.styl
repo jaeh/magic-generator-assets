@@ -1,11 +1,16 @@
+body_color = #efefef
+body_bg_color = #111
 a_color = #666
-a_color_hover = #333
+a_color_hover = #fff
 
 body
-	font-size 23px
+	font-family monospace
+	font-size 20px
 	max-width 700px
 	margin 0 auto
 	padding 0.5em 1em
+	background-color body_bg_color
+	color body_color
 
 a
 	color a_color
@@ -13,26 +18,75 @@ a
 	&:hover
 		color a_color_hover
 
-img
-	height 1em
-
-
-
 header.main
-	margin 0 0 1em
+	width 100%
+	margin 0 0 0.5em
+	display inline-block
 
-	nav
+	img[itemprop="image"]
+		width 30%
+		float left
+		margin 0 3% 0 0
+		max-width 100%;
+		border-radius 100%
+	
+	h1[itemprop=name],
+	div[itemprop="jobTitle"],
+	div[itemprop="description"]
+		float left
+		max-width 66%
+
+	h1[itemprop=name]
+		font-size 1.5em
+		margin 0.5em 0
+	div[itemprop="jobTitle"]
+		font-size .9em
+		margin 0 0 0.5em
+	div[itemprop="description"]
+		font-size .8em		
+
+
+section[itemprop=author]
+	width 94%
+	margin 0 auto
+	max-width 1000px
+	
+	div[itemprop=affiliations] 
+		display inline-block
+
 		ul
-			li
+			li[itemprop=affiliation]
+				margin 1em 0
 				display inline-block
-				margin 0 1em 0 0
+					
 
-section
-	header
-		h2
-			font-size 1.5em
-			margin 0 0 0.5em
 
+				a[itemprop=url]
+					float left
+					display inline-block
+					margin 0 3% 0 0
+							
+				div[itemprop=description]
+					display inline
+					font-size .8em
+
+	ul.emails, ul.social
+		margin 1em 0
+		float left
+		
+	ul.emails
+		width 35%
+
+	ul.social
+		width 65%
+		lh
+			display block
+	
+		li
+			display inline
+			
+			img
+				width 16%
 
 footer.main
 	margin 1em 0
